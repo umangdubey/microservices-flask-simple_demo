@@ -1,0 +1,423 @@
+{
+	"info": {
+		"_postman_id": "b72d05c3-c13f-4992-b261-84b4647facb2",
+		"name": "Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "User create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\":\"user testing\",\n    \"last_name\":\"testing\",\n    \"email_id\":\"testingser@user.com\",\n    \"phone_number\":\"9022131207\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:80/user",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"user"
+							]
+						},
+						"description": "###### To create a user using first_name , last_name,email_id ,phone_number\n\n*   missing any one param give you response of wrong params"
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch all User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:80/user",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"user"
+							]
+						},
+						"description": "###### Used to get all user"
+					},
+					"response": []
+				},
+				{
+					"name": "Get user By id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:80/user/1",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"user",
+								"1"
+							]
+						},
+						"description": "###### Fetch user by id"
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\":\"USER testing\",\n    \"last_name\":\"testing\",\n    \"email_id\":\"testing@user.com\",\n    \"phone_number\":\"9010101010\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:80/user/1",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"user",
+								"1"
+							]
+						},
+						"description": "###### Update user detail by id\n\n*   give all the params required to edit detail"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user by id ",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:80/user/1",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"user",
+								"1"
+							]
+						},
+						"description": "###### Delete user using user id"
+					},
+					"response": []
+				}
+			],
+			"description": "# User service apis"
+		},
+		{
+			"name": "User Interaction",
+			"item": [
+				{
+					"name": "Create User interaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 3,\n    \"content_id\":14,\n    \"read_by\":true,\n    \"like_by\":true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:81/user_interaction",
+							"host": [
+								"localhost"
+							],
+							"port": "81",
+							"path": [
+								"user_interaction"
+							]
+						},
+						"description": "###### Used to create user interaction with content like recoding read and like event with content id and user id"
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch all user_interaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:81/user_interaction",
+							"host": [
+								"localhost"
+							],
+							"port": "81",
+							"path": [
+								"user_interaction"
+							]
+						},
+						"description": "###### Fetch all user interaction"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User interaction",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"content_id\":1,\n    \"read_by\":false,\n    \"like_by\":true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:81/user_interaction/1",
+							"host": [
+								"localhost"
+							],
+							"port": "81",
+							"path": [
+								"user_interaction",
+								"1"
+							]
+						},
+						"description": "###### Update user interaction detail for a particular user using user_interaction id"
+					},
+					"response": []
+				},
+				{
+					"name": "user_interaction_update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"like_by\":false}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:81/user_interaction_update/1",
+							"host": [
+								"localhost"
+							],
+							"port": "81",
+							"path": [
+								"user_interaction_update",
+								"1"
+							]
+						},
+						"description": "Updating read and like event for a user\n\n*   covering edge cases like user read content but doesn't like"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User interaction",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:81/user_interaction/1",
+							"host": [
+								"localhost"
+							],
+							"port": "81",
+							"path": [
+								"user_interaction",
+								"1"
+							]
+						},
+						"description": "###### Delete user interaction with content"
+					},
+					"response": []
+				}
+			],
+			"description": "## USER INTERACTION SERVICE"
+		},
+		{
+			"name": "Content",
+			"item": [
+				{
+					"name": "get_content",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:82/get_content",
+							"host": [
+								"localhost"
+							],
+							"port": "82",
+							"path": [
+								"get_content"
+							]
+						},
+						"description": "###### Get all content at once\n\nif no content in db found simple give you response no content found with 400"
+					},
+					"response": []
+				},
+				{
+					"name": "upload content",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/umangdubey/Desktop/pratilipi_assignment/book.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:82/upload",
+							"host": [
+								"localhost"
+							],
+							"port": "82",
+							"path": [
+								"upload"
+							]
+						},
+						"description": "###### Used to upload content using csv file .\n\n*   things to remember while uploading csv file .\n*   csv file have columns name title ,story,user_id"
+					},
+					"response": []
+				},
+				{
+					"name": "get content by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:82/content/11",
+							"host": [
+								"localhost"
+							],
+							"port": "82",
+							"path": [
+								"content",
+								"11"
+							]
+						},
+						"description": "###### Fetch content by id"
+					},
+					"response": []
+				},
+				{
+					"name": "Content top_content",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:82/top_content",
+							"host": [
+								"localhost"
+							],
+							"port": "82",
+							"path": [
+								"top_content"
+							]
+						},
+						"description": "###### Fetch top content user make interaction with ."
+					},
+					"response": []
+				},
+				{
+					"name": "Recent Content",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:82/get_recent_content",
+							"host": [
+								"localhost"
+							],
+							"port": "82",
+							"path": [
+								"get_recent_content"
+							]
+						},
+						"description": "###### Fetch recent content uploaded .\n\n*   this api used recent created time in backend to fetch data"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Content",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:82/content/15",
+							"host": [
+								"localhost"
+							],
+							"port": "82",
+							"path": [
+								"content",
+								"15"
+							]
+						},
+						"description": "###### Used to delete content by id"
+					},
+					"response": []
+				},
+				{
+					"name": "Update by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"created_at\": \"Wed, 26 Jan 2022 13:16:49 GMT\",\n        \"id\": 8,\n        \"story\": \"Marie\",\n        \"title\": \"Violence in Francophone African and Caribbean Women's Literature\",\n        \"user_id\": \"8\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:82/content/8",
+							"host": [
+								"localhost"
+							],
+							"port": "82",
+							"path": [
+								"content",
+								"8"
+							]
+						},
+						"description": "###### Edit content by id"
+					},
+					"response": []
+				}
+			],
+			"description": "## Content - service to record content ."
+		}
+	]
+}
